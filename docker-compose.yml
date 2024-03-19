@@ -1,7 +1,7 @@
 version: "3.1"
 
 services:
-  fep-portal:
+  portal:
     image: wordpress:latest
     restart: always
     ports:
@@ -13,8 +13,8 @@ services:
       MYSQL_PORT_3306_TCP: 3307
       RAZZLE_WORDPRESS_DB_USER: admin
       RAZZLE_WORDPRESS_DB_PASSWORD: f3P%f!dN&u*m
-      RAZZLE_WORDPRESS_DB_NAME: wordpress_fep
-      VIRTUAL_HOST: fep-portal.dev
+      RAZZLE_WORDPRESS_DB_NAME: wordpress
+      VIRTUAL_HOST: portal.dev
       VIRTUAL_PORT: 80
     volumes:
       - ./wordpress/portal:/var/www/html
@@ -27,7 +27,7 @@ services:
       - 3307:3306
     environment:
       MYSQL_ROOT_PASSWORD: 9N$$NheHKShV
-      MYSQL_DATABASE: wordpress_fep
+      MYSQL_DATABASE: wordpress
       MYSQL_USER: admin
       MYSQL_PASSWORD: f3P%f!dN&u*m
       MYSQL_RANDOM_ROOT_PASSWORD: "1"
